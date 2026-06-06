@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Goldrop: camisetas del mundial a 25 euros, envio gratis en España y pedidos por WhatsApp."
+    />
+    <title>Goldrop | Camisetas del mundial</title>
+    <link rel="icon" href="assets/logo.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Goldrop inicio">
+        <img src="assets/logo.png" alt="Logo Goldrop" />
+        <span>Goldrop</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegacion principal">
+        <a href="#catalogo">Catalogo</a>
+        <a href="#tallas">Tallas</a>
+        <a href="#envios">Envios</a>
+        <a href="#politicas">Cambios</a>
+        <a href="#pago">Pedido</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="user-menu" data-user-menu>
+          <button
+            class="user-pill"
+            type="button"
+            data-user-menu-button
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Iniciar sesion
+          </button>
+
+          <div class="account-dropdown" data-account-dropdown hidden>
+            <p class="dropdown-label">Cuenta</p>
+            <strong data-user-email>Sin sesion</strong>
+            <button type="button" data-open-account-panel="profile">Informacion de cuenta</button>
+            <button type="button" data-open-account-panel="orders">Mis pedidos</button>
+            <button type="button" data-open-account-panel="admin" data-admin-only hidden>Gestionar pedidos</button>
+            <button type="button" data-logout-account>Cerrar sesion</button>
+          </div>
+        </div>
+
+        <button class="cart-button" type="button" data-open-cart aria-label="Abrir carrito">
+          <span>Carrito</span>
+          <span class="cart-count" data-cart-count>0</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero-backdrop" aria-hidden="true">
+          <img src="assets/logo.png" alt="" />
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow">Goldrop camisetas del mundial</p>
+          <h1>Camisetas del mundial</h1>
+          <p class="hero-text">
+            Promocion especial en todas las camisetas. Envio gratis a toda España y pedidos
+            internacionales con precio de envio a confirmar.
+          </p>
+
+          <div class="promo-panel" data-promo-panel>
+            <div>
+              <p class="eyebrow">Oferta programada</p>
+              <h2 data-promo-price-line><strong data-live-price>25 EUR</strong></h2>
+              <p data-promo-status>La promocion se activa a las 12:00 PM.</p>
+            </div>
+            <div class="promo-countdown" data-promo-countdown aria-live="polite">
+              <span>Calculando cuenta atras</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="primary-link" href="#catalogo">Ver catalogo</a>
+            <button class="secondary-link" type="button" data-open-account-panel="profile" data-open-auth-mode="register">Crear cuenta</button>
+          </div>
+        </div>
+
+        <div class="hero-stock" aria-label="Resumen de tienda">
+          <div>
+            <span>Precio</span>
+            <strong data-live-price>25 EUR</strong>
+          </div>
+          <div>
+            <span>Oferta</span>
+            <strong data-promo-stock>Empieza 12:00 PM</strong>
+          </div>
+          <div>
+            <span>España</span>
+            <strong>Envio gratis</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="catalog-section" id="catalogo">
+        <div class="section-heading">
+          <p class="eyebrow">Catalogo</p>
+          <h2>Camisetas disponibles</h2>
+          <p>Elige pais, modelo, talla y cantidad. Las fotos reales aparecen cuando estan cargadas.</p>
+        </div>
+
+        <div class="catalog-tools" aria-label="Busqueda de catalogo">
+          <label class="catalog-search">
+            Buscar pais
+            <input type="search" data-catalog-search placeholder="Argentina, Espana, Brasil..." autocomplete="off" />
+          </label>
+          <label>
+            Pais
+            <select data-country-filter>
+              <option value="all">Todos los paises</option>
+            </select>
+          </label>
+          <div class="variant-switch" aria-label="Modelo de camiseta">
+            <button class="active" type="button" data-type-filter="all">Todos</button>
+            <button type="button" data-type-filter="home">Local</button>
+            <button type="button" data-type-filter="away">Visitante</button>
+          </div>
+        </div>
+
+        <div class="toolbar" aria-label="Filtros por zona">
+          <button class="filter-chip active" type="button" data-filter="all">Todas las zonas</button>
+          <button class="filter-chip" type="button" data-filter="europe">Europa</button>
+          <button class="filter-chip" type="button" data-filter="america">America</button>
+          <button class="filter-chip" type="button" data-filter="other">Otros</button>
+        </div>
+
+        <div class="custom-request">
+          <strong>No ves la camiseta que buscas?</strong>
+          <span>Preguntanos y revisamos si podemos pedirla para ti.</span>
+          <a href="https://wa.me/34613309730?text=Hola%20Goldrop%2C%20busco%20una%20camiseta%20que%20no%20aparece%20en%20el%20catalogo." target="_blank" rel="noreferrer">
+            Consultar camiseta
+          </a>
+        </div>
+
+        <div class="product-grid" data-product-grid></div>
+      </section>
+
+      <section class="size-guide-section" id="tallas">
+        <div class="section-heading left">
+          <p class="eyebrow">Tallas</p>
+          <h2>Guia rapida de tallas</h2>
+          <p>Las medidas son orientativas. Si dudas entre dos tallas, elige la superior o escribenos por WhatsApp antes de pedir.</p>
+        </div>
+        <div class="size-guide-preview">
+          <div>
+            <strong>S</strong>
+            <span>Pecho 88-94 cm</span>
+          </div>
+          <div>
+            <strong>M</strong>
+            <span>Pecho 95-101 cm</span>
+          </div>
+          <div>
+            <strong>L</strong>
+            <span>Pecho 102-108 cm</span>
+          </div>
+          <div>
+            <strong>XL</strong>
+            <span>Pecho 109-115 cm</span>
+          </div>
+          <div>
+            <strong>XXL</strong>
+            <span>Pecho 116-122 cm</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-band" id="envios">
+        <div class="info-item">
+          <span class="info-icon" aria-hidden="true">-20%</span>
+          <h3 data-info-price-line><span data-live-price>25 EUR</span> cada camiseta</h3>
+          <p>Precio unico para todos los paises y modelos.</p>
+        </div>
+        <div class="info-item">
+          <span class="info-icon" aria-hidden="true">ES</span>
+          <h3>Envio gratis en España</h3>
+          <p>Para pedidos nacionales no se suma coste de envio.</p>
+        </div>
+        <div class="info-item">
+          <span class="info-icon" aria-hidden="true">INT</span>
+          <h3>Internacional a consultar</h3>
+          <p>Fuera de España se confirma el total antes de preparar el envio.</p>
+        </div>
+      </section>
+
+      <section class="policy-section" id="politicas">
+        <div class="section-heading left">
+          <p class="eyebrow">Compra clara</p>
+          <h2>Envios, cambios y devoluciones</h2>
+          <p>Queremos que el cliente sepa que ocurre despues de confirmar el pedido y como resolver cualquier incidencia.</p>
+        </div>
+        <div class="policy-grid">
+          <article>
+            <span>01</span>
+            <h3>Tiempos de envio</h3>
+            <p>Preparacion y confirmacion manual tras revisar el pedido. Envio gratis dentro de Espana con seguimiento cuando el pedido pase a envio.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Cambios</h3>
+            <p>Si hay un error de talla o modelo, contacta antes de que el pedido sea preparado. Revisaremos el cambio caso por caso.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Devoluciones</h3>
+            <p>Las camisetas personalizadas con nombre, numero o patch pueden no admitir devolucion si ya han sido preparadas.</p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Pedido especial</h3>
+            <p>Si una camiseta no aparece en el catalogo, pidela por WhatsApp y revisamos disponibilidad antes de cobrar.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="payment-section" id="pago">
+        <div>
+          <p class="eyebrow">Pedido directo</p>
+          <h2>Compra por WhatsApp</h2>
+          <p>
+            Confirma tu pedido por WhatsApp. El pedido queda guardado para que podamos revisar
+            disponibilidad, resolver dudas y actualizar su estado.
+          </p>
+          <div class="payment-methods">
+            <a class="primary-link whatsapp-link" href="https://wa.me/34613309730?text=Hola%20Goldrop%2C%20quiero%20hacer%20un%20pedido." target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+          </div>
+        </div>
+        <div class="qr-card">
+          <strong>Atencion personalizada</strong>
+          <p>Te confirmamos el pedido manualmente antes de prepararlo.</p>
+        </div>
+      </section>
+
+      <section class="contact-section" id="contacto">
+        <div>
+          <p class="eyebrow">Contacto</p>
+          <h2>Atencion Goldrop</h2>
+          <p>Para dudas de stock, tallas o envios fuera de España, contacta con nosotros.</p>
+        </div>
+
+        <div class="contact-links">
+          <a href="https://www.instagram.com/goldrop_sp/" target="_blank" rel="noreferrer">
+            Instagram <strong>@goldrop_sp</strong>
+          </a>
+          <a href="https://wa.me/34613309730" target="_blank" rel="noreferrer">
+            WhatsApp <strong>613 309 730</strong>
+          </a>
+          <a href="https://wa.me/34665646225" target="_blank" rel="noreferrer">
+            WhatsApp <strong>665 646 225</strong>
+          </a>
+          <a href="mailto:goaldrop@hotmail.com">
+            Email <strong>goaldrop@hotmail.com</strong>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <aside class="account-modal" data-account-modal hidden aria-hidden="true">
+      <div class="account-panel" role="dialog" aria-modal="true" aria-labelledby="account-title">
+        <div class="cart-header">
+          <div>
+            <p class="eyebrow">Cuenta Goldrop</p>
+            <h2 id="account-title">Area de cliente</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-account-modal aria-label="Cerrar cuenta">x</button>
+        </div>
+
+        <div class="account-tabs" role="tablist" aria-label="Secciones de cuenta" data-account-tabs hidden>
+          <button class="active" type="button" data-account-tab="profile">Cuenta</button>
+          <button type="button" data-account-tab="orders">Mis pedidos</button>
+          <button type="button" data-account-tab="admin" data-admin-only hidden>Gestion</button>
+        </div>
+
+        <section class="account-view" data-account-view="profile">
+          <div class="account-overview">
+            <div>
+              <p class="eyebrow">Estado de cuenta</p>
+              <h3 data-account-heading>Inicia sesion o crea tu cuenta</h3>
+              <p data-account-detail>Usa tu correo o Google para comprar y ver tus pedidos.</p>
+            </div>
+            <span data-account-badge>Pendiente</span>
+          </div>
+
+          <div class="account-actions" data-account-actions hidden>
+            <button type="button" data-account-action="profile">Informacion de cuenta</button>
+            <button type="button" data-account-action="edit">Editar informacion</button>
+            <button type="button" data-account-action="logout">Cerrar sesion</button>
+          </div>
+
+          <div class="account-info-card" data-account-info-card hidden>
+            <h3>Informacion de cuenta</h3>
+            <div data-account-info></div>
+          </div>
+
+          <form class="account-edit-form" data-account-edit-form hidden>
+            <h3>Editar informacion</h3>
+            <label>
+              Nombre y apellidos
+              <input type="text" name="editFullName" autocomplete="name" pattern="[^0-9]*" />
+            </label>
+            <label>
+              Telefono
+              <div class="phone-field">
+                <span>+34</span>
+                <input type="tel" name="editPhoneNational" inputmode="numeric" maxlength="9" pattern="[0-9]{9}" />
+              </div>
+            </label>
+            <label>
+              Provincia
+              <select name="editState" data-edit-province>
+                <option value="">Selecciona provincia</option>
+              </select>
+            </label>
+            <label>
+              Localidad
+              <input type="text" name="editCity" list="edit-city-options" data-edit-city />
+              <datalist id="edit-city-options" data-edit-city-options></datalist>
+            </label>
+            <label>
+              Calle
+              <input type="text" name="editStreet" />
+            </label>
+            <div class="address-extra-grid">
+              <label>
+                Numero
+                <input type="text" name="editAddressNumber" />
+              </label>
+              <label>
+                Escalera
+                <input type="text" name="editStair" />
+              </label>
+              <label>
+                Piso
+                <input type="text" name="editFloor" />
+              </label>
+              <label>
+                Puerta
+                <input type="text" name="editDoor" />
+              </label>
+            </div>
+            <label>
+              Codigo postal
+              <input type="text" name="editPostalCode" inputmode="numeric" maxlength="5" pattern="[0-9]{5}" />
+            </label>
+            <div class="account-edit-actions">
+              <button class="account-button" type="submit">Guardar cambios</button>
+              <button class="secondary-button" type="button" data-cancel-account-edit>Cancelar</button>
+            </div>
+            <p class="account-status" data-account-edit-status></p>
+          </form>
+
+          <div class="verification-steps" data-verification-steps>
+            <span class="active">Datos</span>
+            <span>Verificacion</span>
+            <span>Lista</span>
+          </div>
+
+          <form class="account-form" data-account-form>
+            <div class="auth-mode-switch" role="tablist" aria-label="Acceso a cuenta">
+              <button class="active" type="button" data-auth-mode="login">Iniciar sesion</button>
+              <button type="button" data-auth-mode="register">Crear cuenta</button>
+            </div>
+
+            <label data-register-only hidden>
+              Nombre y apellidos
+              <input
+                type="text"
+                name="accountName"
+                autocomplete="name"
+                placeholder="Nombre y apellidos"
+                pattern="[^0-9]*"
+                required
+              />
+            </label>
+
+            <label>
+              Correo electronico
+              <input
+                type="email"
+                name="accountEmail"
+                autocomplete="email"
+                placeholder="correo@ejemplo.com"
+                required
+              />
+            </label>
+
+            <label>
+              Contrasena
+              <input
+                type="password"
+                name="accountPassword"
+                autocomplete="current-password"
+                placeholder="Minimo 6 caracteres"
+                minlength="6"
+                required
+              />
+            </label>
+
+            <button class="account-button" type="submit" data-account-submit>Iniciar sesion</button>
+            <button class="google-button" type="button" data-google-login>
+              <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="#4285f4" d="M21.8 12.2c0-.7-.1-1.3-.2-1.9H12v3.6h5.5a4.7 4.7 0 0 1-2 3.1v2.5h3.2c1.9-1.8 3.1-4.4 3.1-7.3z" />
+                <path fill="#34a853" d="M12 22c2.7 0 5-0.9 6.7-2.5L15.5 17c-.9.6-2 .9-3.5.9-2.7 0-4.9-1.8-5.7-4.2H3v2.6A10 10 0 0 0 12 22z" />
+                <path fill="#fbbc05" d="M6.3 13.7A6 6 0 0 1 6 12c0-.6.1-1.2.3-1.7V7.7H3A10 10 0 0 0 3 16.3l3.3-2.6z" />
+                <path fill="#ea4335" d="M12 6.1c1.5 0 2.8.5 3.8 1.5l2.9-2.9A9.7 9.7 0 0 0 12 2a10 10 0 0 0-9 5.7l3.3 2.6C7.1 7.9 9.3 6.1 12 6.1z" />
+              </svg>
+              <span>Continuar con Google</span>
+            </button>
+            <p class="account-status" data-account-status>Cuenta pendiente.</p>
+          </form>
+
+          <div class="verification-card" data-verification-card hidden>
+            <h3>Verifica tu correo</h3>
+            <p>Te enviaremos un correo de verificacion. Despues vuelve y confirma el estado.</p>
+            <label data-local-code-wrap hidden>
+              Codigo
+              <input type="text" inputmode="numeric" maxlength="6" data-verification-code placeholder="6 digitos" />
+            </label>
+            <div class="verification-actions">
+              <button type="button" data-send-verification-code>Enviar correo</button>
+              <button type="button" data-confirm-verification-code>Ya verifique mi correo</button>
+            </div>
+            <p class="account-status" data-verification-status></p>
+          </div>
+        </section>
+
+        <section class="account-view" data-account-view="orders" hidden>
+          <div class="orders-card">
+            <div class="orders-card-header">
+              <div>
+                <p class="eyebrow">Area de cliente</p>
+                <h3>Mis pedidos</h3>
+              </div>
+            </div>
+            <div class="orders-list" data-orders-list></div>
+          </div>
+        </section>
+
+        <section class="account-view" data-account-view="admin" hidden>
+          <div class="admin-orders" data-admin-orders>
+            <div class="orders-card-header">
+              <div>
+                <p class="eyebrow">Pedidos</p>
+                <h3>Cambiar estado</h3>
+              </div>
+            </div>
+            <div class="admin-tools">
+              <label>
+                Buscar pedido, cliente o telefono
+                <input type="search" data-admin-search placeholder="GD-..., nombre, email o telefono" autocomplete="off" />
+              </label>
+              <button class="account-button" type="button" data-admin-export-csv>Exportar CSV</button>
+            </div>
+            <div class="orders-list" data-admin-orders-list></div>
+          </div>
+        </section>
+      </div>
+    </aside>
+
+    <aside class="photo-modal" data-photo-modal hidden aria-hidden="true">
+      <div class="photo-viewer" role="dialog" aria-modal="true" aria-labelledby="photo-title">
+        <div class="photo-viewer-header">
+          <h2 id="photo-title" data-photo-title>Camiseta</h2>
+          <button class="icon-button" type="button" data-close-photo aria-label="Cerrar foto">x</button>
+        </div>
+        <div class="photo-viewer-frame">
+          <button class="photo-nav" type="button" data-photo-prev aria-label="Foto anterior">&lt;</button>
+          <div class="photo-viewer-track" data-photo-track></div>
+          <button class="photo-nav" type="button" data-photo-next aria-label="Foto siguiente">&gt;</button>
+        </div>
+      </div>
+    </aside>
+
+    <aside class="size-modal" data-size-modal hidden aria-hidden="true">
+      <div class="size-modal-panel" role="dialog" aria-modal="true" aria-labelledby="size-modal-title">
+        <div class="photo-viewer-header">
+          <div>
+            <p class="eyebrow">Guia de tallas</p>
+            <h2 id="size-modal-title" data-size-modal-title>Camiseta Goldrop</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-size-modal aria-label="Cerrar guia de tallas">x</button>
+        </div>
+        <div class="size-table-wrap">
+          <table class="size-table">
+            <thead>
+              <tr>
+                <th>Talla</th>
+                <th>Pecho</th>
+                <th>Largo</th>
+                <th>Altura orientativa</th>
+              </tr>
+            </thead>
+            <tbody data-size-table-body></tbody>
+          </table>
+        </div>
+        <p class="size-note">Medidas orientativas. Si quieres la camiseta mas holgada, pide una talla mas.</p>
+      </div>
+    </aside>
+
+    <aside class="cart-drawer" data-cart-drawer aria-hidden="true">
+      <div class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title">
+        <div class="cart-header">
+          <div>
+            <p class="eyebrow">Pedido</p>
+            <h2 id="cart-title">Tu carrito</h2>
+          </div>
+          <button class="icon-button" type="button" data-close-cart aria-label="Cerrar carrito">x</button>
+        </div>
+
+        <div class="checkout-progress" aria-label="Pasos de compra">
+          <span class="active" data-checkout-progress="cart">1 Carrito</span>
+          <span data-checkout-progress="shipping">2 Envio y contacto</span>
+        </div>
+
+        <div class="cart-items" data-cart-items></div>
+
+        <section class="checkout-step active" data-checkout-step="cart">
+          <div class="cart-summary">
+            <span>Total pedido</span>
+            <strong data-cart-total>0 EUR</strong>
+          </div>
+
+          <p class="checkout-notice" data-cart-step-notice>Personaliza tus camisetas y continua para introducir el envio.</p>
+          <button class="checkout-button" type="button" data-continue-checkout>Continuar compra</button>
+        </section>
+
+        <form class="checkout-form checkout-step" data-checkout-form data-checkout-step="shipping" hidden novalidate>
+          <div class="checkout-step-header">
+            <div>
+              <p class="eyebrow">Envio</p>
+              <h3>Datos para entregar el pedido</h3>
+            </div>
+            <button class="back-button" type="button" data-back-to-cart>Volver al carrito</button>
+          </div>
+
+          <label>
+            Nombre
+            <input type="text" name="firstName" autocomplete="given-name" placeholder="Nombre" pattern="[^0-9]*" required />
+          </label>
+
+          <label>
+            Apellidos
+            <input type="text" name="lastName" autocomplete="family-name" placeholder="Apellidos" pattern="[^0-9]*" required />
+          </label>
+
+          <label>
+            Telefono
+            <div class="phone-field">
+              <span>+34</span>
+              <input
+                type="tel"
+                name="phoneNational"
+                autocomplete="tel-national"
+                placeholder="600000000"
+                inputmode="numeric"
+                maxlength="9"
+                pattern="[0-9]{9}"
+                required
+              />
+            </div>
+          </label>
+
+          <label>
+            Pais
+            <select name="country" autocomplete="country-name" required data-country-select>
+              <option value="Spain">España</option>
+            </select>
+          </label>
+
+          <label>
+            Provincia
+            <select name="state" autocomplete="address-level1" required data-province-select>
+              <option value="">Selecciona provincia</option>
+            </select>
+          </label>
+
+          <label>
+            Localidad
+            <input
+              type="text"
+              name="city"
+              autocomplete="address-level2"
+              list="city-options"
+              placeholder="Escribe tu localidad"
+              required
+              data-city-select
+            />
+            <datalist id="city-options" data-city-options></datalist>
+          </label>
+
+          <label>
+            Calle
+            <input
+              type="text"
+              name="street"
+              autocomplete="street-address"
+              placeholder="Nombre de la calle"
+              required
+            />
+          </label>
+
+          <div class="address-extra-grid">
+            <label>
+              Numero
+              <input type="text" name="addressNumber" autocomplete="address-line2" placeholder="Opcional" />
+            </label>
+
+            <label>
+              Escalera
+              <input type="text" name="stair" placeholder="Opcional" />
+            </label>
+
+            <label>
+              Piso
+              <input type="text" name="floor" placeholder="Opcional" />
+            </label>
+
+            <label>
+              Puerta
+              <input type="text" name="door" placeholder="Opcional" />
+            </label>
+          </div>
+
+          <label>
+            Codigo postal
+            <input
+              type="text"
+              name="postalCode"
+              autocomplete="postal-code"
+              placeholder="Codigo postal"
+              required
+              inputmode="numeric"
+              maxlength="5"
+              pattern="[0-9]{5}"
+            />
+          </label>
+
+          <label>
+            Correo
+            <input type="email" name="email" autocomplete="email" placeholder="correo@ejemplo.com" required />
+          </label>
+
+          <label>
+            Notas
+            <textarea name="note" rows="3" placeholder="Detalles del pedido o dudas"></textarea>
+          </label>
+
+          <div class="cart-summary">
+            <span>Total pedido</span>
+            <strong data-cart-total>0 EUR</strong>
+          </div>
+
+          <p class="checkout-notice" data-checkout-notice>Revisa tus datos antes de confirmar el pedido.</p>
+
+          <div class="payment-choice" aria-label="Confirmar pedido">
+            <button class="whatsapp-button" type="submit" data-payment-method="whatsapp">Enviar pedido por WhatsApp</button>
+          </div>
+
+          <section class="checkout-success" data-checkout-success hidden>
+            <h3>Pedido realizado</h3>
+            <p data-payment-instructions>Se abrira WhatsApp con el resumen del pedido.</p>
+            <div class="success-actions">
+              <button type="button" data-download-invoice>Descargar factura</button>
+              <button type="button" data-print-invoice>Imprimir factura</button>
+              <a href="https://wa.me/34613309730" target="_blank" rel="noreferrer" data-whatsapp-proof>Escribir por WhatsApp</a>
+            </div>
+          </section>
+        </form>
+      </div>
+    </aside>
+
+    <footer class="site-footer">
+      <p>&copy; <span data-year></span> Goldrop. Pedidos por Instagram, WhatsApp y email.</p>
+      <p>
+        Goldrop no esta afiliada a federaciones, marcas deportivas ni organizadores oficiales de
+        torneos. Usa solo productos originales, autorizados o sin marcas protegidas.
+      </p>
+    </footer>
+
+    <script src="firebase-config.js"></script>
+    <script src="assets/spain-locations.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
